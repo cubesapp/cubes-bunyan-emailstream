@@ -1,6 +1,6 @@
 {
-  "name": "bunyan-emailstream",
-  "version": "1.0.2",
+  "name": "cubes-bunyan-emailstream",
+  "version": "1.1.0",
   "description": "Send email on bunyan log record",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyjin/bunyan-emailstream.git"
+    "url": "https://github.com/cubesapp/cubes-bunyan-emailstream.git"
   },
   "keywords": [
     "bunyan",
     "email",
     "stream"
   ],
-  "author": "Hyungjin Kim <kim@hyjin.com>",
+  "author": "Hyungjin Kim <kim@hyjin.com>, Dipul Khatri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hyjin/bunyan-emailstream/issues"
+    "url": "https://github.com/cubesapp/cubes-bunyan-emailstream/issues"
   },
-  "homepage": "https://github.com/hyjin/bunyan-emailstream",
+  "homepage": "https://github.com/cubesapp/cubes-bunyan-emailstream",
   "dependencies": {
     "nodemailer": "~0.6.x"
   },

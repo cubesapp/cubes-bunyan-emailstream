@@ -1,4 +1,5 @@
 var util = require('util');
+var inspect = require('util').inspect;
 var extend = util._extend;
 var stream = require('stream');
 var nodemailer = require('nodemailer');
@@ -76,7 +77,7 @@ function formatSubject(log) {
     return util.format(
         '[%s] %s/%s on %s',
         levelName(log.level),
-        log.name,
+        log.app,
         log.pid,
         log.hostname
     );
@@ -84,7 +85,7 @@ function formatSubject(log) {
 
 function formatBody(log) {
     var rows = [];
-    rows.push('* name: ' + log.name);
+    rows.push('* app: ' + log.app);
     rows.push('* hostname: ' + log.hostname);
     rows.push('* pid: ' + log.pid);
     rows.push('* time: ' + log.time);
@@ -94,9 +95,16 @@ function formatBody(log) {
     }
 
     if (log.err) {
+        rows.push('* err: ' + log.err);
+    }
+
+    if (log.err && log.err.stack) {
         rows.push('* err.stack: ' + log.err.stack);
+    }
+
+    if(log.src) {
+      rows.push('* src: ' + inspect(log.src,false,100));
     }
 
     return rows.join('\n');
 }
-
