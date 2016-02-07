@@ -75,7 +75,7 @@ EmailStream.prototype.end = function () {
 
 function formatSubject(log) {
     return util.format(
-        '[%s] %s/%s on %s',
+        '[%s] %s on %s',
         levelName(log.level),
         log.app,
         log.hostname
