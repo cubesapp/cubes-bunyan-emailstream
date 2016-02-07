@@ -78,7 +78,6 @@ function formatSubject(log) {
         '[%s] %s/%s on %s',
         levelName(log.level),
         log.app,
-        log.pid,
         log.hostname
     );
 }
