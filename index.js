@@ -74,8 +74,15 @@ EmailStream.prototype.end = function () {
 };
 
 function formatSubject(log) {
+    var env = process.env.NODE_ENV;
+    if(env) {
+      env = env.toUpperCase();
+    } else {
+      env = "NOENV";
+    }
     return util.format(
-        '[%s] %s on %s',
+        '[%s-%s] %s on %s',
+        env,
         levelName(log.level),
         log.app,
         log.hostname
